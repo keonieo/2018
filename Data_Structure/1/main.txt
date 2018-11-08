@@ -1,0 +1,66 @@
+// ADT Stack
+#include <stdio.h>
+#include "ADT_stack.h"
+#include "chart.h"
+
+ #define REVERSE 0// reverse
+
+int main() {
+
+	// new type definition
+	typedef struct {
+		char name[20];
+		int score;
+	} STD;
+
+	// prepare 5 data
+	STD student[5] = {
+		{"James", 95},
+		{"Yoosoo", 87},
+		{"Paul", 93},
+		{"Peter", 76},
+		{"Park", 100}
+	};
+
+#ifndef REVERSE
+	generate_chart_header();
+	//                    me                my boss            my score
+	generate_chart_node(student[0].name, student[0].name, student[0].score); 
+	generate_chart_node(student[1].name, student[0].name, student[1].score); 
+	generate_chart_node(student[2].name, student[1].name, student[2].score); 
+	generate_chart_node(student[3].name, student[2].name, student[3].score); 
+	generate_chart_node(student[4].name, student[3].name, student[4].score); 
+	generate_chart_footer();
+#else
+	//start here, for homework
+	//stack creation
+	STACK* stack_ptr;
+	stack_ptr = create_stack();
+
+	//push them
+	int i;
+	for(i=0; i<5; i++)	{
+		push(stack_ptr, &(student[i]));
+	}
+	//pop them
+
+	STD* boss = NULL; //backup previous boss
+	STD* std;
+	generate_chart_header();
+	while(stack_ptr->count)	{
+		std = (STD*)(stack_ptr->top->data_ptr);//(STD* type change.....)
+		stack_ptr->top = stack_ptr->top->link;
+		(stack_ptr->count)--;
+		if(boss)//boss is not Null
+			generate_chart_node(std->name,boss->name,std->score);
+		else
+			generate_chart_node(std->name,std->name,std->score);
+		boss=std;
+	}
+
+	generate_chart_footer();
+
+#endif
+
+    return 0;
+}
