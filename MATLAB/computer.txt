@@ -1,0 +1,52 @@
+>> Colors = imread('HW.jpg');
+>> R=Colors(:,:,1);
+>> G=Colors(:,:,2);
+>> B=Colors(:,:,3);
+>> Gray=R/3+G/3+B/3;
+>> imwrite(Gray,'gray.png');
+>> P=Gray;
+>> P=double(P);
+>> B8 = floor(rem(P,2));
+>> B8=unit8(B8);
+'unit8'은(는) 정의되지 않은 함수 또는 변수입니다.
+ 
+정정 제안:
+>> B8=uint8(B8);
+>> B8=B8*255;
+>> imwrite(B8,'B8.png');
+>> P=P/2;
+>> B7 = floor(rem(P,2));
+>> B7=uint8(B7);
+>> B7=B7*255;
+>> imwrite(B7,'B7.png');
+>> P=P/2;
+>> B6 = floor(rem(P,2));
+>> B6=uint8(B6);
+>> B6=B6*255;
+>> imwrite(B6,'B6.png');
+>> P=P/2;
+>> B5 = floor(rem(P,2));
+>> B5=uint8(B5);
+>> B5=B5*255;
+>> imwrite(B5,'B5.png');
+>> P=P/2;
+>> B4 = floor(rem(P,2));
+>> B4=uint8(B4);
+>> B4=B4*255;
+>> imwrite(B4,'B4.png');
+>> P=P/2;
+>> B3 = floor(rem(P,2));
+>> B3=uint8(B3);
+>> B3=B3*255;
+>> imwrite(B3,'B3.png');
+>> P=P/2;
+>> B2 = floor(rem(P,2));
+>> B2=uint8(B2);
+>> B2=B2*255;
+>> imwrite(B2,'B2.png');
+>> P=P/2;
+>> B1 = floor(rem(P,2));
+>> B1=uint8(B1);
+>> B1=B1*255;
+>> imwrite(B1,'B1.png');
+>> 
