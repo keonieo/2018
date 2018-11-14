@@ -1,0 +1,20 @@
+function cos_Taylor_2016117346(a,b,c)
+sol = cos(b); iter = 1;
+while(1)
+     solold = sol;
+    if(rem(iter,4) == 1)
+        sol = solold - sin(b)*(a-b).^iter/factorial(iter);
+    elseif(rem(iter,4) == 2)
+        sol = solold - cos(b)*(a-b).^iter/factorial(iter); 
+    elseif(rem(iter,4) == 3)
+        sol = solold + sin(b)*(a-b).^iter/factorial(iter);
+    else
+        sol = solold + cos(b)*(a-b).^iter/factorial(iter);
+    end
+    iter = iter+1;
+    if(iter == c)
+        break
+    end
+end
+plot(a,sol,'o:r','LineWidth',2);
+end
