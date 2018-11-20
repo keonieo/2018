@@ -23,7 +23,7 @@
   웹 프로그래밍 기초의 과제코드.<br>
   HTML및 CSS로 작성. 나무위키를 따라 웹페이지를 만드는 과제.<br>
   해당 참고 주소 : https://namu.wiki/w/%EC%8B%9C%EB%B9%8C%20%EC%9B%8C%202
-  <li><h2>C</h2></li>
+  <h2><li>C</li></h2>
   <hr>
   <ul>
     <h3><li>1</li></h3>
