@@ -34,8 +34,16 @@
         <tr><td>4<br>3<br>2<br>1<br>0</td><td>9<br>8<br>7<br>6<br>5</td></tr>
         </tbody>
       </table>
+    를 pop과 push함수를 이용하여 다음과 같은 1개의 stack을 만드는 코드.
+    <table>
+      <tbody>
+        <tr><td>9<br>8<br>7<br>6<br>5<br>4<br>3<br>2<br>1<br>0</td></tr>
+      </tbody>
+      </table>
     <li>2</li>
-    
+    llist함수를 이용.<br>
+   무작위로 직선이 그어져있는 지도를 각 장소 좌표의 x좌표를 오름차순으로 정리하여, 지도상의 장소가 x좌표 오름차순으로 직선이 그어지게 만드는 코드.
     <li>3</li>
+    
   </ul>
  </ol>
